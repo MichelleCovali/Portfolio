@@ -35,3 +35,5 @@ Section links use an interruptible eased scroll, move focus to the destination, 
 ## Project videos
 
 Click any project card or its Watch demo button to open the original demonstration in a native modal dialog. The viewer provides playback controls, fullscreen through the browser's player, Escape/close/backdrop dismissal, focus containment and restoration, scroll locking, and an inline playback-error fallback. Videos load metadata only when the viewer opens and do not autoplay. Closing unmounts the player and stops playback.
+
+First-time visitors see dark mode by default, regardless of device appearance. The theme toggle saves an explicit light or dark choice in browser storage and restores it on future visits. Dark styling is present in the initial HTML to avoid a light flash.

@@ -10,7 +10,7 @@ import { Check, Copy, Download, Menu, Moon, Sun, X } from "lucide-react";
 import { navigation, profile } from "@/data/portfolio";
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState<boolean | null>(null);
+  const [dark, setDark] = useState(true);
   const trigger = useRef<HTMLButtonElement>(null);
   const [active, setActive] = useState("home");
   useEffect(() => {
@@ -39,7 +39,6 @@ export function Header() {
     };
   }, []);
   useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
     const sync = () => {
       let saved: string | null = null;
       try {
@@ -47,13 +46,13 @@ export function Header() {
       } catch {
         // Theme switching still works when browser storage is unavailable.
       }
-      const value = saved ? saved === "dark" : media.matches;
+      const value = saved !== "light";
       document.documentElement.classList.toggle("dark", value);
       setDark(value);
     };
     sync();
-    media.addEventListener("change", sync);
-    return () => media.removeEventListener("change", sync);
+    window.addEventListener("storage", sync);
+    return () => window.removeEventListener("storage", sync);
   }, []);
   useEffect(() => {
     if (!open) return;
