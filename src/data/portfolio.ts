@@ -5,6 +5,10 @@ export type Experience = {
   location: string;
   period: string;
   url: string;
+  websiteAction: string;
+  websiteContribution: string;
+  websitePreview: { src: string; alt: string };
+  contributionTitles: string[];
   responsibilities: string[];
   technologies: string[];
 };
@@ -33,6 +37,17 @@ export const experience: Experience[] = [
     location: "Enschede, Netherlands",
     period: "September 2025 – January 2026",
     url: "https://metachef.nl/",
+    websiteAction: "View the website",
+    websiteContribution: "Frontend implementation & UI/UX contribution",
+    websitePreview: {
+      src: "/images/companies/metachef-website.jpg",
+      alt: "MetaChef’s live website showing its education sector homepage",
+    },
+    contributionTitles: [
+      "Internal tools",
+      "Frontend development",
+      "UI/UX collaboration",
+    ],
     responsibilities: [
       "Developed internal administration interfaces and tools for managing and updating the company’s digital products.",
       "Independently implemented the frontend of the company’s new website, translating design concepts into a functional and consistent user interface.",

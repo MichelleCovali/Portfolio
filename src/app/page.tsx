@@ -124,33 +124,87 @@ export default function Home() {
               title="Learning through real work."
             />
             {experience.map((e) => (
-              <Reveal key={e.company} className="experience-card">
-                <div className="experience-meta">
-                  <span className="company-mark">
-                    <Image src={e.logo.src} alt={e.logo.alt} width={166} height={45} className="company-logo" />
-                  </span>
-                  <p className="eyebrow">{e.company}</p>
-                  <p>{e.period}</p>
-                  <p className="muted">{e.location}</p>
+              <Reveal key={e.company} className="internship-feature">
+                <div className="internship-header">
+                  <div className="internship-identity">
+                    <div className="internship-logo">
+                      <Image
+                        src={e.logo.src}
+                        alt={e.logo.alt}
+                        width={166}
+                        height={45}
+                        className="company-logo"
+                      />
+                    </div>
+                    <div>
+                      <p className="internship-label">
+                        PROFESSIONAL EXPERIENCE
+                      </p>
+                      <h3>{e.role}</h3>
+                    </div>
+                  </div>
+                  <div className="internship-period">
+                    <p>{e.period}</p>
+                    <span>
+                      <MapPin size={14} />
+                      {e.location}
+                    </span>
+                  </div>
+                </div>
+                <div className="internship-body">
                   <a
-                    className="text-link"
                     href={e.url}
                     target="_blank"
                     rel="noreferrer"
+                    className="internship-showcase"
+                    aria-label={`View ${e.company} website — frontend implementation and UI/UX contribution`}
                   >
-                    Visit Company Website <ArrowUpRight size={15} />
+                    <div className="internship-preview">
+                      <div className="internship-preview-label">
+                        <span>WEBSITE PREVIEW</span>
+                        <ArrowUpRight size={17} />
+                      </div>
+                      <div className="internship-preview-image">
+                        <Image
+                          src={e.websitePreview.src}
+                          alt={e.websitePreview.alt}
+                          fill
+                          sizes="(max-width: 850px) 90vw, 46vw"
+                        />
+                      </div>
+                    </div>
+                    <div className="internship-showcase-footer">
+                      <div>
+                        <p>EXPLORE THE LIVE WEBSITE</p>
+                        <span>{e.websiteAction}</span>
+                      </div>
+                      <span className="internship-open">
+                        <ArrowUpRight size={23} />
+                      </span>
+                    </div>
+                    <p className="internship-scope">{e.websiteContribution}</p>
                   </a>
-                </div>
-                <div className="experience-detail">
-                  <h3>{e.role}</h3>
-                  <ul>
-                    {e.responsibilities.map((r) => (
-                      <li key={r}>{r}</li>
+                  <div className="internship-contributions">
+                    <p className="internship-label">MY CONTRIBUTION</p>
+                    {[1, 2, 0].map((index, order) => (
+                      <div
+                        className="internship-contribution"
+                        key={e.contributionTitles[index]}
+                      >
+                        <span className="internship-number">0{order + 1}</span>
+                        <div>
+                          <h4>{e.contributionTitles[index]}</h4>
+                          <p>{e.responsibilities[index]}</p>
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
+                </div>
+                <div className="internship-stack">
+                  <p className="internship-label">BUILT & COLLABORATED WITH</p>
                   <div className="badges">
-                    {e.technologies.map((t) => (
-                      <span key={t}>{t}</span>
+                    {e.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
                     ))}
                   </div>
                 </div>
