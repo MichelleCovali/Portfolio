@@ -40,4 +40,4 @@ First-time visitors see dark mode by default, regardless of device appearance. T
 
 ## Individual Figma project
 
-The carousel also includes Learning App — UI Design, an individual practice project from the supplied Figma file (Mini-curs 3 zile Mihaela). Its hero image is captured directly from the frame labelled Hero Image, and the card links to the original Figma design. No live application, repository, user research, or measured outcomes are claimed. Edit `designUrl` and the project content in `src/data/projects.ts`; replace `public/images/projects/learning-app-figma.jpg` to update its cover.
+The carousel also includes Learning App — UI Design, an individual practice project from the supplied Figma file (Mini-curs 3 zile Mihaela). Its hero image uses the original high-resolution PNG exported and supplied by Mihaela, and the card links to the original Figma design. No live application, repository, user research, or measured outcomes are claimed. Edit `designUrl` and the project content in `src/data/projects.ts`; replace `public/images/projects/learning-app-figma.png` to update its cover.

@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "An individual Figma practice project exploring the interface of a mobile learning app. The design includes course and academy browsing and subscription screens, developed alongside wireframes, a color palette, typography, and reusable interface components.",
     roles: ["UI Designer"],
     screenshot: {
-      src: "/images/projects/learning-app-figma.jpg",
+      src: "/images/projects/learning-app-figma.png",
       alt: "Hero composition from my Figma design showing a learning app’s library and subscription screens",
       fit: "contain",
     },
