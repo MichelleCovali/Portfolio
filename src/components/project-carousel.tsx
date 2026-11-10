@@ -69,7 +69,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
       className="project-carousel"
       role="region"
       aria-roledescription="carousel"
-      aria-label="University projects"
+      aria-label="Selected projects"
     >
       {selectedProject && (
         <ProjectVideoDialog

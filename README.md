@@ -37,3 +37,7 @@ Section links use an interruptible eased scroll, move focus to the destination, 
 Click any project card or its Watch demo button to open the original demonstration in a native modal dialog. The viewer provides playback controls, fullscreen through the browser's player, Escape/close/backdrop dismissal, focus containment and restoration, scroll locking, and an inline playback-error fallback. Videos load metadata only when the viewer opens and do not autoplay. Closing unmounts the player and stops playback.
 
 First-time visitors see dark mode by default, regardless of device appearance. The theme toggle saves an explicit light or dark choice in browser storage and restores it on future visits. Dark styling is present in the initial HTML to avoid a light flash.
+
+## Individual Figma project
+
+The carousel also includes Learning App — UI Design, an individual practice project from the supplied Figma file (Mini-curs 3 zile Mihaela). Its hero image is captured directly from the frame labelled Hero Image, and the card links to the original Figma design. No live application, repository, user research, or measured outcomes are claimed. Edit `designUrl` and the project content in `src/data/projects.ts`; replace `public/images/projects/learning-app-figma.jpg` to update its cover.

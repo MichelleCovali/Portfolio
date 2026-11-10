@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Github, Play } from "lucide-react";
+import { ArrowUpRight, Figma, Github, Play } from "lucide-react";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({
@@ -9,7 +9,11 @@ export function ProjectCard({
   project: Project;
   onWatch?: () => void;
 }) {
-  const hasLinks = project.githubUrl || project.liveUrl || project.caseStudyUrl;
+  const hasLinks =
+    project.githubUrl ||
+    project.liveUrl ||
+    project.caseStudyUrl ||
+    project.designUrl;
 
   return (
     <article className="project-card" aria-labelledby={`project-${project.id}`}>
@@ -26,6 +30,19 @@ export function ProjectCard({
           </span>
         </button>
       ) : null}
+      {project.designUrl && !project.videos?.length && (
+        <a
+          className="project-video-trigger"
+          href={project.designUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`View ${project.title} in Figma`}
+        >
+          <span className="project-watch-label">
+            <Figma size={14} /> View design
+          </span>
+        </a>
+      )}
       {project.screenshot && (
         <div
           className={`project-image${project.secondaryImage ? " project-image-pair" : ""}`}
@@ -71,6 +88,11 @@ export function ProjectCard({
         </div>
         {hasLinks && (
           <div className="project-links">
+            {project.designUrl && (
+              <a href={project.designUrl} target="_blank" rel="noreferrer">
+                <Figma size={16} /> View Figma design <ArrowUpRight size={16} />
+              </a>
+            )}
             {project.githubUrl && (
               <a href={project.githubUrl} target="_blank" rel="noreferrer">
                 <Github size={16} /> Repository

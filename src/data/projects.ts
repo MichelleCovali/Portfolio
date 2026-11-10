@@ -17,6 +17,7 @@ export type Project = {
   githubUrl?: string;
   liveUrl?: string;
   caseStudyUrl?: string;
+  designUrl?: string;
 };
 
 // Content and original imagery from Mihaela's earlier university portfolio.
@@ -59,6 +60,22 @@ export const projects: Project[] = [
       "NFC",
       "Figma",
     ],
+  },
+  {
+    id: "learning-app-design",
+    title: "Learning App — UI Design",
+    category: "Individual project · UI design",
+    description:
+      "An individual Figma practice project exploring the interface of a mobile learning app. The design includes course and academy browsing and subscription screens, developed alongside wireframes, a color palette, typography, and reusable interface components.",
+    roles: ["UI Designer"],
+    screenshot: {
+      src: "/images/projects/learning-app-figma.jpg",
+      alt: "Hero composition from my Figma design showing a learning app’s library and subscription screens",
+      fit: "contain",
+    },
+    technologies: ["Figma"],
+    designUrl:
+      "https://www.figma.com/design/Qh8juGwY1iHM0NhsjFABIw/Mini-curs-3-zile-Mihaela?node-id=0-1",
   },
   {
     id: "circle-solutions",

@@ -218,7 +218,7 @@ export default function Home() {
               number="03"
               label="PROJECTS"
               title="Ideas put into practice."
-              description="Selected university projects, from websites and mobile apps to connected devices and robotics."
+              description="Selected university and individual projects, from websites and interface design to connected devices and robotics."
             />
             <a
               className="text-link"
@@ -263,8 +263,7 @@ export default function Home() {
           )}
           {projects.length > 0 && (
             <p className="project-source">
-              A selection from my earlier studies. Images and demo stills from
-              my{" "}
+              University project images and demo stills are from my{" "}
               <a href={projectSource} target="_blank" rel="noreferrer">
                 original project portfolio <ArrowUpRight size={13} />
               </a>
